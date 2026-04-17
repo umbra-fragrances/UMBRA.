@@ -5,34 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMBRA | Exclusive Fragrances</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #050505;
             color: #fff;
-            font-family: 'Cinzel', serif;
-            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
         }
 
-        .container {
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            z-index: 1;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
         }
 
         h1 {
+            font-family: 'Cinzel', serif;
             font-size: clamp(3rem, 10vw, 6rem);
             letter-spacing: 15px;
-            font-weight: 700;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
             margin-bottom: 10px;
-            color: #fff;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-            animation: fadeIn 2s ease-in-out;
         }
 
         .subtitle {
@@ -40,51 +40,138 @@
             letter-spacing: 8px;
             color: #a4a4a4;
             text-transform: uppercase;
-            margin-bottom: 50px;
-            display: block;
+            margin-bottom: 40px;
         }
 
-        .btn {
+        /* Catalog Section */
+        .catalog {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            margin-bottom: 60px;
+            color: #d4af37;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            border-color: #d4af37;
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: grayscale(20%);
+        }
+
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #888;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            display: block;
+            font-size: 1.3rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .btn-buy {
             display: inline-block;
-            padding: 12px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #fff;
+            padding: 10px 25px;
+            border: 1px solid #d4af37;
+            color: #d4af37;
             text-decoration: none;
             font-size: 0.7rem;
-            letter-spacing: 4px;
-            transition: all 0.5s;
-            position: relative;
-            overflow: hidden;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            border-color: #fff;
-            background: #fff;
+        .btn-buy:hover {
+            background: #d4af37;
             color: #000;
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); filter: blur(10px); }
-            to { opacity: 1; transform: translateY(0); filter: blur(0); }
-        }
-
-        /* Efecto de partículas de fondo sutil */
-        .overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-            opacity: 0.05;
+        footer {
+            padding: 50px;
+            text-align: center;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            color: #444;
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
-    <div class="container">
+
+    <div class="hero">
         <h1>UMBRA</h1>
         <span class="subtitle">Elevate Your Scent</span>
-        <br>
-        <a href="https://wa.me/34636265430" class="btn">ENTER THE VAULT</a>
     </div>
+
+    <div class="catalog">
+        <h2 class="section-title">THE SELECTION</h2>
+        <div class="products">
+            
+            <div class="card">
+                <img src="https://fimgs.net/mdimg/perfume/m.70233.jpg" alt="Lattafa Asad">
+                <h3>LATTAFA ASAD</h3>
+                <p>Black Pepper, Pineapple, Patchouli</p>
+                <span class="price">35€</span>
+                <a href="https://wa.me/34636265430?text=Hola,%20quiero%20el%20Asad" class="btn-buy">WHATSAPP</a>
+            </div>
+
+            <div class="card">
+                <img src="https://fimgs.net/mdimg/perfume/m.75886.jpg" alt="Lattafa Khamrah">
+                <h3>LATTAFA KHAMRAH</h3>
+                <p>Cinnamon, Dates, Praline, Vanilla</p>
+                <span class="price">45€</span>
+                <a href="https://wa.me/34636265430?text=Hola,%20quiero%20el%20Khamrah" class="btn-buy">WHATSAPP</a>
+            </div>
+
+            <div class="card">
+                <img src="https://fimgs.net/mdimg/perfume/m.30291.jpg" alt="Club De Nuit">
+                <h3>CLUB DE NUIT</h3>
+                <p>Lemon, Birch, Musk, Ambergris</p>
+                <span class="price">40€</span>
+                <a href="https://wa.me/34636265430?text=Hola,%20quiero%20el%20Club%20de%20Nuit" class="btn-buy">WHATSAPP</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        UMBRA © 2026 | ESPARREGUERA EXCLUSIVE
+    </footer>
+
 </body>
 </html>
