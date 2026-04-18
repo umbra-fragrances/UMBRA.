@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UMBRA | Parfums d'Exceptions</title>
+    <title>UMBRA | Exclusive Fragrances</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: #000;
+            background-color: #000;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -18,88 +18,79 @@
             color: #fff;
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
-        }
-
-        /* Fondo con degradado sutil para resaltar el logo */
-        .bg-gradient {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 70%);
-            z-index: 0;
+            /* Fondo degradado radial " Premium " */
+            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
         }
 
         .container {
             text-align: center;
-            z-index: 1;
-            max-width: 600px;
-            padding: 20px;
-            animation: fadeIn 2.5s ease-in-out;
+            width: 90%;
+            max-width: 500px; /* Un poco más estrecho para centralizar */
         }
 
         .logo-img {
             width: 100%;
-            max-width: 450px;
             height: auto;
-            margin-bottom: -20px; /* Ajuste para que el subtítulo quede cerca */
+            margin-bottom: 0px; /* Pegamos el subtítulo */
+            filter: drop-shadow(0 0 10px rgba(156, 132, 65, 0.1));
         }
 
-        .tagline {
-            font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
+        .subtitle {
+            font-size: 0.9rem;
             letter-spacing: 6px;
-            color: #d4af37; /* Color dorado como el logo */
+            color: #9c8441; /* Dorado exacto de la captura */
             text-transform: uppercase;
             margin-bottom: 50px;
+            font-weight: 200;
             opacity: 0.8;
         }
 
+        /* Botón idéntico al de la captura */
         .btn {
             display: inline-block;
-            padding: 14px 40px;
-            border: 1px solid #d4af37;
-            color: #d4af37;
+            padding: 15px 50px;
+            border: 1px solid #9c8441;
+            color: #9c8441;
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 4px;
-            transition: all 0.4s ease;
             text-transform: uppercase;
+            transition: all 0.4s ease;
             background: transparent;
         }
 
         .btn:hover {
-            background: #d4af37;
+            background: #9c8441;
             color: #000;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 25px rgba(156, 132, 65, 0.3);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; filter: blur(10px); }
-            to { opacity: 1; filter: blur(0); }
-        }
-
+        /* Pie de página sutil */
         footer {
             position: absolute;
             bottom: 30px;
             font-size: 0.6rem;
             letter-spacing: 3px;
-            color: #333;
+            color: #444;
             text-transform: uppercase;
         }
     </style>
 </head>
 <body>
-    <div class="bg-gradient"></div>
 
     <div class="container">
-        <img src="https://files.oaiusercontent.com/file-K1S2fWpQWp6v2E2LzV7H8A?se=2024-10-23T15%3A46%3A58Z&sp=r&sv=24.11.12&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dlogo_umbra.png&sig=S/E4X4lWz2L8aWqWz2L8aWqWz2L8aWqWz2L8aWqWz2I%3D" alt="UMBRA Logo" class="logo-img">
+        <img src="logo.png" alt="UMBRA LOGO" class="logo-img">
         
-        <p class="tagline">Elevate Your Scent</p>
+        <p class="subtitle">ELEVATE YOUR SCENT</p>
         
-        <a href="https://wa.me/34636265430?text=Hola,%20me%20gustaría%20ver%20el%20catálogo%20de%20perfumes%20de%20UMBRA." class="btn">Enter the Vault</a>
+        <a href="https://wa.me/34636265430?text=Hola,%20me%20gustaría%20ver%20el%20catálogo%20de%20perfumes." class="btn">
+            ENTER THE VAULT
+        </a>
     </div>
 
     <footer>
-        Esparreguera | Exclusive Fragrances
+        ESPARREGUERA | EXCLUSIVE FRAGRANCES
     </footer>
+
 </body>
 </html>
