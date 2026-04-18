@@ -18,41 +18,45 @@
             color: #fff;
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
-            /* Fondo degradado radial " Premium " */
-            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
         }
 
         .container {
             text-align: center;
             width: 90%;
-            max-width: 500px; /* Un poco más estrecho para centralizar */
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
+        /* Ajuste de tamaño para que no ocupe toda la pantalla */
         .logo-img {
             width: 100%;
+            max-width: 400px; 
             height: auto;
-            margin-bottom: 0px; /* Pegamos el subtítulo */
-            filter: drop-shadow(0 0 10px rgba(156, 132, 65, 0.1));
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 15px rgba(156, 132, 65, 0.2));
         }
 
         .subtitle {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             letter-spacing: 6px;
-            color: #9c8441; /* Dorado exacto de la captura */
+            color: #9c8441;
             text-transform: uppercase;
-            margin-bottom: 50px;
+            margin-bottom: 60px; /* Espacio para que no se pise con el botón */
             font-weight: 200;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
-        /* Botón idéntico al de la captura */
+        /* Botón estilizado y con espacio */
         .btn {
             display: inline-block;
-            padding: 15px 50px;
+            padding: 16px 50px;
             border: 1px solid #9c8441;
             color: #9c8441;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 4px;
             text-transform: uppercase;
             transition: all 0.4s ease;
@@ -62,14 +66,13 @@
         .btn:hover {
             background: #9c8441;
             color: #000;
-            box-shadow: 0 0 25px rgba(156, 132, 65, 0.3);
+            box-shadow: 0 0 30px rgba(156, 132, 65, 0.3);
         }
 
-        /* Pie de página sutil */
         footer {
             position: absolute;
             bottom: 30px;
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             letter-spacing: 3px;
             color: #444;
             text-transform: uppercase;
