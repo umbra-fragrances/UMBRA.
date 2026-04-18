@@ -1,161 +1,90 @@
-HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UMBRA | Exclusive Selection</title>
+    <title>UMBRA | Exclusive Fragrances</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #fff; color: #000; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 
-        header { padding: 30px; text-align: center; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
-        .logo { font-family: 'Cinzel', serif; font-size: 2.5rem; letter-spacing: 12px; color: #000; text-decoration: none; font-weight: 700; cursor: pointer; }
-
-        /* SECCIONES DE PORTADA (HOME) */
-        .home-sections { display: flex; flex-direction: column; width: 100%; }
-        
-        .home-card {
-            height: 60vh;
-            width: 100%;
+        body {
+            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            cursor: pointer;
-            transition: 0.6s all ease;
-            text-decoration: none;
-        }
-
-        .home-card:hover { filter: brightness(1.2); }
-        .home-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
-
-        .home-card h2 {
-            position: relative;
-            z-index: 2;
             color: #fff;
             font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            letter-spacing: 8px;
-            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+            overflow: hidden;
         }
 
-        /* IMÁGENES DE FONDO PARA LAS CATEGORÍAS */
-        .card-hombre { background-image: url('https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=2070&auto=format&fit=crop'); }
-        .card-mujer { background-image: url('https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1974&auto=format&fit=crop'); }
-        .card-unisex { background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1922&auto=format&fit=crop'); }
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
 
-        /* VISTA DE PRODUCTOS */
-        .category-view { display: none; padding: 60px 20px; max-width: 1200px; margin: 0 auto; animation: slideUp 0.5s ease; }
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            letter-spacing: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
 
-        .back-btn { display: inline-block; margin-bottom: 30px; font-size: 0.7rem; letter-spacing: 2px; text-decoration: none; color: #888; text-transform: uppercase; cursor: pointer; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .product { text-align: center; }
-        .product img { width: 100%; height: 400px; object-fit: contain; background: #f9f9f9; margin-bottom: 20px; padding: 20px; }
-        .product h3 { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 2px; margin-bottom: 10px; }
-        .price { display: block; font-size: 1.1rem; color: #333; margin-bottom: 20px; }
-        
-        .btn-buy {
+        .subtitle {
+            font-size: 0.7rem;
+            letter-spacing: 8px;
+            color: #a4a4a4;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            display: block;
+        }
+
+        .btn {
             display: inline-block;
-            padding: 12px 30px;
-            border: 1px solid #000;
-            color: #000;
+            padding: 12px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
             text-decoration: none;
             font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: 0.3s;
+            letter-spacing: 4px;
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
         }
-        .btn-buy:hover { background: #000; color: #fff; }
 
-        footer { padding: 60px; text-align: center; font-size: 0.7rem; color: #ccc; letter-spacing: 3px; border-top: 1px solid #eee; margin-top: 50px; }
+        .btn:hover {
+            border-color: #fff;
+            background: #fff;
+            color: #000;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        /* Efecto de partículas de fondo sutil */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.05;
+        }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo" onclick="showHome()">UMBRA</div>
-    </header>
-
-    <div id="homePage" class="home-sections">
-        <div class="home-card card-hombre" onclick="showCategory('hombre')">
-            <h2>HOMBRE</h2>
-        </div>
-        <div class="home-card card-mujer" onclick="showCategory('mujer')">
-            <h2>MUJER</h2>
-        </div>
-        <div class="home-card card-unisex" onclick="showCategory('unisex')">
-            <h2>UNISEX</h2>
-        </div>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>UMBRA</h1>
+        <span class="subtitle">Elevate Your Scent</span>
+        <br>
+        <a href="https://wa.me/34636265430" class="btn">ENTER THE VAULT</a>
     </div>
-
-    <div id="view-hombre" class="category-view">
-        <a class="back-btn" onclick="showHome()">← VOLVER AL INICIO</a>
-        <h2 style="text-align:center; font-family:'Cinzel'; letter-spacing:5px; margin-bottom:50px;">COLECCIÓN HOMBRE</h2>
-        <div class="grid">
-            <div class="product">
-                <img src="https://m.media-amazon.com/images/I/61kYmN-zZEL._SL1500_.jpg" alt="Asad">
-                <h3>LATTAFA ASAD</h3>
-                <span class="price">35,00 €</span>
-                <a href="https://wa.me/34636265430?text=Hola,%20quiero%20el%20Asad" class="btn-buy">COMPRAR</a>
-            </div>
-            <div class="product">
-                <img src="https://m.media-amazon.com/images/I/61mNnQvKxNL._SL1000_.jpg" alt="Club">
-                <h3>CLUB DE NUIT INTENSE</h3>
-                <span class="price">40,00 €</span>
-                <a href="https://wa.me/34636265430?text=Hola,%20quiero%20el%20Club" class="btn-buy">COMPRAR</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="view-mujer" class="category-view">
-        <a class="back-btn" onclick="showHome()">← VOLVER AL INICIO</a>
-        <h2 style="text-align:center; font-family:'Cinzel'; letter-spacing:5px; margin-bottom:50px;">COLECCIÓN MUJER</h2>
-        <div class="grid">
-            <div class="product">
-                <img src="https://m.media-amazon.com/images/I/51r2XG6vVmL._SL1000_.jpg" alt="Yara">
-                <h3>LATTAFA YARA</h3>
-                <span class="price">30,00 €</span>
-                <a href="https://wa.me/34636265430?text=Hola,%20quiero%20el%20Yara" class="btn-buy">COMPRAR</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="view-unisex" class="category-view">
-        <a class="back-btn" onclick="showHome()">← VOLVER AL INICIO</a>
-        <h2 style="text-align:center; font-family:'Cinzel'; letter-spacing:5px; margin-bottom:50px;">COLECCIÓN UNISEX</h2>
-        <div class="grid">
-            <div class="product">
-                <img src="https://m.media-amazon.com/images/I/71YvYlV1MCL._SL1500_.jpg" alt="Khamrah">
-                <h3>LATTAFA KHAMRAH</h3>
-                <span class="price">45,00 €</span>
-                <a href="https://wa.me/34636265430?text=Hola,%20quiero%20el%20Khamrah" class="btn-buy">COMPRAR</a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        UMBRA &copy; 2026 | THE ESSENCE OF ARABIAN LUXURY
-    </footer>
-
-    <script>
-        function showCategory(id) {
-            document.getElementById('homePage').style.display = 'none';
-            document.querySelectorAll('.category-view').forEach(v => v.style.display = 'none');
-            document.getElementById('view-' + id).style.display = 'block';
-            window.scrollTo(0,0);
-        }
-        function showHome() {
-            document.querySelectorAll('.category-view').forEach(v => v.style.display = 'none');
-            document.getElementById('homePage').style.display = 'flex';
-            window.scrollTo(0,0);
-        }
-    </script>
 </body>
 </html>
